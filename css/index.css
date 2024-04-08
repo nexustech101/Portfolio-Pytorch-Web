@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: whitesmoke;
+}
+
+body {
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: whitesmoke;
+  background-color: #222;
+  background-image: radial-gradient(circle, #1f1f1f, #1f1f1f);
+}
+
+.header-border-bottom {
+  border-bottom: 3px solid #6200ff;
+}
+.header-border-bottom-home {
+  border-bottom: 3px solid #3ba171;  
+}
+
+h1 {
+  margin: 5em 7px;
+}
+
+article {
+  margin: 5em 0;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  gap: 1em;
+}
+article > p {
+  margin: 0.5em;
+  text-align: justify;
+}
+article > h3 {
+  margin: 1em 7px;
+  /* margin-bottom: 2em; */
+}
+article > h2 {
+  margin: 2em 7px;
+  color: #666;
+}

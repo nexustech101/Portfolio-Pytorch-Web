@@ -1,0 +1,116 @@
+<style>
+  #to-do-list {
+    z-index: 1000;
+  }
+  #to-do-list li {
+    margin: 5px 0;
+    list-style-type: none;
+  }
+  #to-do-list button {
+    margin-left: 10px;
+  }
+  .to-do-container {
+    z-index: 1000;
+  }
+  .to-do-container > .to-do-header {
+    color: #1f1f1f;
+  }
+  .to-do-container > .to-do-header > input {
+    height: 45px;
+    width: 300px;
+    border-radius: 5px;
+    color: #666;
+    background-color: #1f1f1f;
+    padding: 0 0.5em;
+    border: 1px solid transparent;
+    transition: all 0.25s;
+  }
+  .to-do-container > .to-do-header > button {
+    padding: 0.6em 1.2em;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background-color: #1f1f1f;
+    color: #666;
+    transition: all 0.25s;
+  }
+  .to-do-container > .to-do-header > input:hover,
+  .to-do-container > .to-do-header > button:hover,
+  .to-do-container > .to-do-header > input:focus,
+  .to-do-container > .to-do-header > button:focus {
+    border: 1px solid #6200ff;
+    transition: all 0.25s;
+  }
+</style>
+
+<div class="to-do-container">
+  <div class="to-do-header">
+    <input
+      type="text"
+      id="todo-input"
+      placeholder="Enter a new to-do"
+      required
+    />
+    <button id="btn">hack</button>
+    <button id="add-todo">Add</button>
+    <!-- <button id="clear-all">Clear All</button> -->
+    <!-- Clear All button -->
+  </div>
+  <ul id="to-do-list">
+    <!-- To-do items will be added here -->
+  </ul>
+</div>
+
+<script>
+  class ToDoList {
+    constructor() {
+      this.container = document.getElementById("to-do-list");
+      this.todoInput = document.getElementById("todo-input");
+      this.addButton = document.getElementById("add-todo");
+      this.clearAllButton = document.getElementById("clear-all"); // Reference to the Clear All button
+      this.init();
+    }
+
+    init() {
+      this.addButton.addEventListener("click", () => {
+        this.createToDoItem(this.todoInput.value);
+        console.log(this.todoInput.value);
+      });
+      this.addButton.addEventListener("submit", () => {
+        this.createToDoItem(this.todoInput.value);
+        console.log(this.todoInput.value);
+      });
+      this.clearAllButton.addEventListener("click", () => this.clearAllItems()); // Event listener for clearing all items
+    }
+
+    createToDoItem(itemText) {
+      if (!itemText || itemText.trim() === "") return; // Ignore empty inputs
+
+      const li = document.createElement("li");
+      li.textContent = itemText;
+
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      deleteButton.addEventListener("click", () => li.remove());
+
+      li.appendChild(deleteButton);
+      this.container.appendChild(li);
+
+      this.todoInput.value = ""; // Clear input field after adding
+    }
+
+    clearAllItems() {
+      // Removes all child elements (to-do items) from the list
+      while (this.container.firstChild) {
+        this.container.removeChild(this.container.firstChild);
+      }
+    }
+  }
+
+  document.getElementById("btn").addEventListener("click", (e) => {
+    alert("clicked");
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    new ToDoList();
+  });
+</script>

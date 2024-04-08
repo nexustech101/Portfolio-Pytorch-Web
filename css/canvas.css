@@ -1,0 +1,58 @@
+canvas {
+  /* position: absolute; */
+  /*   
+    margin-top: 70px;
+    padding: 0;
+    border-radius: 10px; 
+  */
+  top: 0;
+  left: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+button {
+  all: unset;
+  background-color: #111111;
+}
+
+input {
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  border-style: none;
+  margin: 0 10px;
+  padding: 0 0.5em;
+}
+
+.color {
+  padding: 0;
+  margin: 10px;
+
+  width: 35px;
+  height: 35px;
+
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.color:hover,
+.color:focus {
+  border: 2px solid white;
+}
+
+.container1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: absolute;
+  padding-left: 1em;
+
+  height: 80px;
+  width: 100vw;
+
+  top: 0;
+  left: 0;
+  gap: 0.2em;
+}

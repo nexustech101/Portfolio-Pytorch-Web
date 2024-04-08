@@ -1,0 +1,28 @@
+<!-- home.html -->
+<!-- <div style="padding-top: 10em" id="bg">
+  <strong><h1 class="header-border-bottom">This Is The Home Page!</h1></strong>
+</div> -->
+<div class="">
+  <div class="card-container">
+    <div tabindex="1" class="card"><h4>Here's Some Text</h4></div>
+    <div tabindex="2" class="card"><h4>Here's Some Text</h4></div>
+  </div>
+  <div class="card-container">
+    <div tabindex="3" class="card"><h4>Here's Some Text</h4></div>
+    <div tabindex="4" class="card"><h4>Here's Some Text</h4></div>
+  </div>
+  <div class="card-container">
+    <div
+      onclick="
+        const name = prompt('What is your name, sir?'); 
+        document.querySelectorAll('.card-container .card').forEach(card => card.innerHTML = `<h4>${name}</h4>`);
+      "
+      tabindex="5"
+      class="card"
+    >
+      <h4>Here's Some Text</h4>
+    </div>
+    <div tabindex="6" class="card"><h4>Here's Some Text</h4></div>
+  </div>
+</div>
+
